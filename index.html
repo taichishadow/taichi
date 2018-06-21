@@ -322,6 +322,9 @@
         <section id="members" class="scroll sec sec8">
             <div class="content">
                 <h3><span>研究室</span>成員 <em> Lab Members</em> </h3>
+                <div class="article"></div>
+                <div class="scroller-status"></div>
+                <!--
                 <section>
                     <h4>博士後研究員</h4>
                     <div class="person">
@@ -357,7 +360,6 @@
                             <p>國立中正大學 - 心理研究所</p>
                             <p>入學年度：99學年</p>
                             <p>E-mail: s864270@yahoo.com.tw</p>
-                            <!-- <a href="#">詳細資料</a> -->
                         </div>
                     </div>
                     <div class="person">
@@ -367,7 +369,6 @@
                             <p>國立中山大學 - 教育研究所</p>
                             <p>入學年度：99學年</p>
                             <p>E-mail: hiroko1210@gmail.com</p>
-                            <!-- <a href="#">詳細資料</a> -->
                         </div>
                     </div>
                     <div class="person">
@@ -391,6 +392,7 @@
                         </div>
                     </div>
                 </section>
+                -->
             </div>
         </section>
     </div>
@@ -435,11 +437,11 @@
     });
     var infScroll = new InfiniteScroll( ".example", {
 		path: function() {
-			// 頁面路徑
-			if ( this.loadCount < 2 ) {
+			// 頁面路徑			
+            if ( this.loadCount < 2 ) {
 				// 只讀取前兩頁資料
-				var nextIndex = this.loadCount + 2; // 2
-				return "page" + nextIndex + ".html"; // page2.html
+				var nextIndex = this.loadCount; // 2
+				return "person" + nextIndex + ".html"; // page2.html
 			}
 		},
 		append: ".article", // 匯入物件類別
