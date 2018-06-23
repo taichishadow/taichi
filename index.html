@@ -323,7 +323,6 @@
             <div class="content">
                 <h3><span>研究室</span>成員 <em> Lab Members</em> </h3>
                 <div class="article"></div>
-                <div class="scroller-status"></div>
                 <!--
                 <section>
                     <h4>博士後研究員</h4>
@@ -413,7 +412,7 @@
             <li><a onClick="goToByScroll('members'); return false;">研究室成員</a></li>
         </ul>
     </div>
-    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-infinitescroll/3.0.3/infinite-scroll.pkgd.min.js"></script>
     <script src="js/share.js"></script>
     <script src="js/jquery.menu.js"></script>
@@ -435,19 +434,22 @@
             }
         }
     });
-    var infScroll = new InfiniteScroll( ".example", {
+    var infScroll = new InfiniteScroll( ".article", {
 		path: function() {
 			// 頁面路徑			
-            if ( this.loadCount < 2 ) {
+            if ( this.loadCount < 12 ) {
 				// 只讀取前兩頁資料
-				var nextIndex = this.loadCount; // 2
+				var nextIndex = this.loadCount + 1; // 2
 				return "person" + nextIndex + ".html"; // page2.html
 			}
 		},
-		append: ".article", // 匯入物件類別
-		status: ".scroller-status" // 捲軸狀態類別
+		append: ".scroll",// 匯入物件類別(要匯入進來的CLASS名稱)
+        animate: true,
+        function(arrayOfNewElems){
+            alert("123");
+        }
 	})
-
+    
     </script>
 </body>
 
